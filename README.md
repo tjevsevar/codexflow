@@ -4,7 +4,7 @@
 
 Codex is strongest when it has the right project context. CodexFlow gives every repository a lightweight operating system for Codex: persistent guidance, reusable Agent Skills, a roadmap, session logs, architecture notes, ADRs, learned patterns, and feature specs.
 
-It is inspired by SpecFlow-style AI guardrails, but rebuilt for Codex surfaces instead of Claude-specific files.
+It is inspired by [Jure's SpecFlow](https://github.com/jurebordon/specflow) and its AI guardrails. Thanks to Jure for the original idea; CodexFlow rebuilds the workflow for Codex surfaces instead of Claude-specific files.
 
 ## Why CodexFlow?
 
