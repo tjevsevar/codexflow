@@ -34,6 +34,9 @@ export async function verify() {
   if (agents && !agents.includes(config.DOCS_PATH)) {
     warnings.push(`AGENTS.md does not reference ${config.DOCS_PATH}.`);
   }
+  if (agents && !agents.includes('$checkpoint-session')) {
+    warnings.push('AGENTS.md does not mention $checkpoint-session.');
+  }
 
   console.log('');
   console.log(chalk.bold('CodexFlow Verification'));

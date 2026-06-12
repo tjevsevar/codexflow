@@ -13,6 +13,7 @@ export function buildManifest(config) {
     { template: 'skills/init-codexflow.md.template', output: '.agents/skills/init-codexflow/SKILL.md', generated: true },
     { template: 'skills/plan-session.md.template', output: '.agents/skills/plan-session/SKILL.md', generated: true },
     { template: 'skills/start-session.md.template', output: '.agents/skills/start-session/SKILL.md', generated: true },
+    { template: 'skills/checkpoint-session.md.template', output: '.agents/skills/checkpoint-session/SKILL.md', generated: true },
     { template: 'skills/end-session.md.template', output: '.agents/skills/end-session/SKILL.md', generated: true },
     { template: 'skills/new-feature.md.template', output: '.agents/skills/new-feature/SKILL.md', generated: true },
     { template: 'skills/verify-codexflow.md.template', output: '.agents/skills/verify-codexflow/SKILL.md', generated: true }

@@ -1,0 +1,80 @@
+---
+name: checkpoint-session
+description: Create a CodexFlow checkpoint when context is getting high, work is paused, or a task is unfinished. Use instead of end-session when the roadmap task is not complete.
+---
+
+# Checkpoint Session
+
+Write a handoff that lets a fresh Codex thread continue without losing quality.
+
+Use this when:
+
+- context is getting high
+- the user wants to pause
+- implementation is mid-task
+- tests are failing and need follow-up
+- you need a fresh thread before continuing
+
+Use `$end-session` instead when the task is actually done.
+
+## Steps
+
+1. Inspect current state:
+   - `git status --short`
+   - `git diff --stat`
+2. Identify the active feature/task from:
+   - `{{DOCS_PATH}}/ROADMAP.md`
+   - the current branch name
+   - the latest relevant feature spec under `{{DOCS_PATH}}/feature_docs/`
+3. Update `{{DOCS_PATH}}/SESSION_LOG.md` with a new top entry labelled as a checkpoint.
+4. Do not mark the roadmap task complete unless it is truly complete.
+5. Add or update blockers/follow-ups in `{{DOCS_PATH}}/ROADMAP.md` only when there is a real blocker or next task.
+6. Update `{{DOCS_PATH}}/LEARNED_PATTERNS.md` only if a reusable pattern or gotcha was discovered.
+
+## Session Log Entry Shape
+
+```markdown
+## [<feature-name>] YYYY-MM-DD (Checkpoint)
+
+**Task**: <active task>
+**Branch**: <branch>
+**Status**: In progress
+
+### Done
+- <completed pieces>
+
+### Not Done
+- <remaining pieces>
+
+### Files Touched
+- `<path>` - <why it matters>
+
+### Checks Run
+- `<command>` - passed/failed/not run
+
+### Decisions / Gotchas
+- <important context for the next thread>
+
+### Resume Prompt
+Paste this into a fresh Codex thread:
+
+```text
+Use $plan-session. Continue from the latest checkpoint in {{DOCS_PATH}}/SESSION_LOG.md.
+```
+
+---
+```
+
+## Output
+
+End with:
+
+- what was checkpointed
+- whether the roadmap task remains open
+- exact prompt to use in a fresh Codex thread
+
+## Guardrails
+
+- Do not commit, push, merge, or open a PR unless the user explicitly asks.
+- Do not mark work complete just because the context window is high.
+- Be explicit about failing or skipped checks.

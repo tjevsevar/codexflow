@@ -1,6 +1,6 @@
 {
   "name": "codexflow",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Codex-native spec and session workflow for AI-assisted development",
   "type": "module",
   "bin": {

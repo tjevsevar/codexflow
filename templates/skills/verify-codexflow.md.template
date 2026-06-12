@@ -13,6 +13,7 @@ Run a read-only health check.
 - `.agents/skills/init-codexflow/SKILL.md`
 - `.agents/skills/plan-session/SKILL.md`
 - `.agents/skills/start-session/SKILL.md`
+- `.agents/skills/checkpoint-session/SKILL.md`
 - `.agents/skills/end-session/SKILL.md`
 - `.agents/skills/new-feature/SKILL.md`
 - `.agents/skills/verify-codexflow/SKILL.md`

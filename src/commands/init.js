@@ -131,7 +131,7 @@ function defaults(projectDir, docsPath, detection, options) {
   }
 
   return {
-    CODEXFLOW_VERSION: '0.1.0',
+    CODEXFLOW_VERSION: '0.1.1',
     PROJECT_NAME: projectName,
     PROJECT_DESCRIPTION: '',
     PROJECT_MODE: mode,

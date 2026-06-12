@@ -37,6 +37,7 @@ Use these repo skills from `.agents/skills` when relevant:
 - `$init-codexflow` - populate the skeleton docs from repository context
 - `$plan-session` - choose the next task and produce a focused plan
 - `$start-session` - begin implementation after a plan is accepted
+- `$checkpoint-session` - write a handoff when context is high but the task is not done
 - `$end-session` - verify, update docs, and summarize the completed session
 - `$new-feature` - create a feature spec and roadmap tasks
 - `$verify-codexflow` - validate CodexFlow docs and configuration

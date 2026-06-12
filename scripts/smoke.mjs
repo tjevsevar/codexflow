@@ -18,6 +18,7 @@ try {
     'AGENTS.md',
     '.agents/skills/init-codexflow/SKILL.md',
     '.agents/skills/plan-session/SKILL.md',
+    '.agents/skills/checkpoint-session/SKILL.md',
     'docs_codexflow/.codexflow.json',
     '.codex/hooks.json'
   ];

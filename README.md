@@ -20,6 +20,7 @@ CodexFlow turns that implicit context into files Codex can read every time.
 | "The architecture drifts as Codex builds." | `ADR.md` and `OVERVIEW.md` preserve durable decisions and system reality. |
 | "Feature requirements get fuzzy during implementation." | `feature_docs/<feature>/SPEC.md` gives each feature a concrete target. |
 | "I repeat the same workflow prompts." | `.agents/skills` gives Codex reusable workflows like `$plan-session` and `$end-session`. |
+| "The context window is getting full mid-task." | `$checkpoint-session` writes a handoff so a fresh thread can continue cleanly. |
 
 ## What You Get
 
@@ -41,6 +42,7 @@ your-project/
 │       ├── init-codexflow/
 │       ├── plan-session/
 │       ├── start-session/
+│       ├── checkpoint-session/
 │       ├── end-session/
 │       ├── new-feature/
 │       └── verify-codexflow/
@@ -77,7 +79,8 @@ The typical loop:
 4. Use $new-feature to define a feature
 5. Use $plan-session to plan one focused task
 6. Let Codex implement
-7. Use $end-session to verify and update project memory
+7. Use $checkpoint-session if context is high and the task is unfinished
+8. Use $end-session when the task is done to verify and update project memory
 ```
 
 ## Existing Repo Example
@@ -103,6 +106,8 @@ With CodexFlow:
 6. `$end-session` records what changed, which checks ran, and what remains.
 
 The next thread starts with useful memory instead of a blank slate.
+
+If context gets high before the feature is done, use `$checkpoint-session` instead. It writes a "resume from here" entry in `SESSION_LOG.md` without pretending the task is complete.
 
 ## Fresh Project Example
 
@@ -186,6 +191,10 @@ Use $new-feature to define account deletion.
 
 ```text
 Use $plan-session and pick the next task from the roadmap.
+```
+
+```text
+Use $checkpoint-session. Context is getting high, but the task is not done. Write a handoff for a fresh thread.
 ```
 
 ```text
