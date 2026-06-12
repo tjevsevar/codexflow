@@ -251,7 +251,6 @@ Planned improvements:
 
 - better command detection from existing docs
 - optional npm publishing
-- migration from SpecFlow-generated projects
 - richer greenfield interview flow
 - project-specific custom skill generation
 
