@@ -21,7 +21,7 @@ CodexFlow turns that implicit context into files Codex can read every time.
 | "Feature requirements get fuzzy during implementation." | `feature_docs/<feature>/SPEC.md` gives each feature a concrete target. |
 | "I repeat the same workflow prompts." | `.agents/skills` gives Codex reusable workflows like `$plan-session` and `$end-session`. |
 
-## Unique Selling Points
+## What You Get
 
 - **Codex-native**: Generates `AGENTS.md`, `.agents/skills`, and optional `.codex/hooks.json`.
 - **Works with existing and fresh projects**: Adoption mode for current repos; greenfield mode for shaping a new app before code exists.
