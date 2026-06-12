@@ -1,0 +1,19 @@
+# CodexFlow Configuration
+
+- **Project**: {{PROJECT_NAME}}
+- **Description**: {{PROJECT_DESCRIPTION}}
+- **Mode**: {{PROJECT_MODE}}
+- **Initialized**: {{DATE}}
+- **CodexFlow Version**: {{CODEXFLOW_VERSION}}
+- **Docs Path**: {{DOCS_PATH}}
+- **Tech Stack**: {{TECH_STACK}}
+- **Test Command**: `{{TEST_COMMAND}}`
+- **Build Command**: `{{BUILD_COMMAND}}`
+- **Lint Command**: `{{LINT_COMMAND}}`
+- **Typecheck Command**: `{{TYPECHECK_COMMAND}}`
+- **Git Workflow**: {{GIT_WORKFLOW}}
+- **Default Branch**: {{DEFAULT_BRANCH}}
+- **Branch Convention**: {{BRANCH_CONVENTION}}
+- **Hooks Enabled**: {{ENABLE_HOOKS}}
+
+The machine-readable copy of this configuration is `.codexflow.json` in this folder.

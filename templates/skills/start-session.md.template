@@ -1,0 +1,28 @@
+---
+name: start-session
+description: Start a planned implementation session. Use after a CodexFlow plan is approved or when the user explicitly says to begin implementing the planned task.
+---
+
+# Start Session
+
+Begin implementation from an approved or clearly stated plan.
+
+## Steps
+
+1. Confirm current state:
+   - `git status --short`
+   - `git branch --show-current`
+2. Read the relevant task in `{{DOCS_PATH}}/ROADMAP.md` and any feature spec under `{{DOCS_PATH}}/feature_docs/`.
+3. Run the narrowest useful baseline check when cheap:
+   - `{{TEST_COMMAND}}`
+4. Implement incrementally:
+   - read before editing
+   - keep changes scoped to the task
+   - add or update tests when behavior changes
+5. Track decisions or gotchas for the eventual session log.
+
+## Guardrails
+
+- Do not commit, push, merge, or open a PR unless the user explicitly asks.
+- If a task requires changing frozen requirements in a feature spec, ask first.
+- If tests fail for unrelated reasons, document the failure and avoid broad cleanup.

@@ -1,0 +1,47 @@
+{
+  "name": "codexflow",
+  "version": "0.1.0",
+  "description": "Codex-native spec and session workflow for AI-assisted development",
+  "type": "module",
+  "bin": {
+    "codexflow": "./bin/codexflow.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "scripts/",
+    "templates/",
+    "README.md",
+    "INSTALLATION.md"
+  ],
+  "scripts": {
+    "check": "node --check bin/codexflow.js && find src templates/hooks -name '*.js' -print0 | xargs -0 -n1 node --check",
+    "smoke": "node scripts/smoke.mjs",
+    "audit": "npm audit --omit=dev"
+  },
+  "keywords": [
+    "codex",
+    "agent-skills",
+    "ai",
+    "workflow",
+    "spec-driven"
+  ],
+  "author": "Tadej J",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjevsevar/codexflow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tjevsevar/codexflow/issues"
+  },
+  "homepage": "https://github.com/tjevsevar/codexflow#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^7.0.0",
+    "chalk": "^5.4.0",
+    "commander": "^13.0.0"
+  }
+}

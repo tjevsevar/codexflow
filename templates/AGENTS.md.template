@@ -1,0 +1,50 @@
+# {{PROJECT_NAME}}
+
+This repository uses CodexFlow for Codex-native planning, implementation sessions, and project memory.
+
+## CodexFlow Context
+
+Read these files before planning or making substantial changes:
+
+- `{{DOCS_PATH}}/ROADMAP.md` - current priorities and feature-tagged tasks
+- `{{DOCS_PATH}}/SESSION_LOG.md` - recent work history
+- `{{DOCS_PATH}}/OVERVIEW.md` - system architecture and invariants
+- `{{DOCS_PATH}}/ADR.md` - architecture decisions
+- `{{DOCS_PATH}}/LEARNED_PATTERNS.md` - patterns discovered during prior sessions
+- `{{DOCS_PATH}}/CUSTOM.md` - project-specific conventions and gotchas
+
+## Working Agreements
+
+- Keep work scoped to one task or feature at a time.
+- Prefer a short plan before broad edits.
+- Update `{{DOCS_PATH}}/SESSION_LOG.md` after meaningful implementation sessions.
+- Update `{{DOCS_PATH}}/ROADMAP.md` when task status or priority changes.
+- Add an ADR entry for durable architecture decisions.
+- Do not invent commands. Prefer commands documented in this repo.
+- Do not read or print secrets from `.env`, private keys, credentials, or token files.
+
+## Commands
+
+- Test: `{{TEST_COMMAND}}`
+- Build: `{{BUILD_COMMAND}}`
+- Lint: `{{LINT_COMMAND}}`
+- Typecheck: `{{TYPECHECK_COMMAND}}`
+
+## CodexFlow Skills
+
+Use these repo skills from `.agents/skills` when relevant:
+
+- `$init-codexflow` - populate the skeleton docs from repository context
+- `$plan-session` - choose the next task and produce a focused plan
+- `$start-session` - begin implementation after a plan is accepted
+- `$end-session` - verify, update docs, and summarize the completed session
+- `$new-feature` - create a feature spec and roadmap tasks
+- `$verify-codexflow` - validate CodexFlow docs and configuration
+
+## Git
+
+- Default branch: `{{DEFAULT_BRANCH}}`
+- Branch convention: `{{BRANCH_CONVENTION}}`
+- Workflow: `{{GIT_WORKFLOW}}`
+
+Do not commit, push, merge, or open a PR unless the user explicitly asks.

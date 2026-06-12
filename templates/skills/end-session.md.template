@@ -1,0 +1,37 @@
+---
+name: end-session
+description: End a CodexFlow implementation session. Use when implementation is done and the user wants verification, documentation updates, and a concise handoff summary.
+---
+
+# End Session
+
+Verify the work and update project memory.
+
+## Steps
+
+1. Inspect changes:
+   - `git status --short`
+   - `git diff --stat`
+2. Run relevant checks:
+   - `{{TEST_COMMAND}}`
+   - `{{LINT_COMMAND}}` if code style changed
+   - `{{TYPECHECK_COMMAND}}` if typed code changed
+3. Update `{{DOCS_PATH}}/ROADMAP.md`:
+   - mark completed tasks
+   - move finished items to `Done` if appropriate
+   - add blockers or follow-up tasks
+4. Prepend an entry to `{{DOCS_PATH}}/SESSION_LOG.md`:
+   - feature
+   - task
+   - summary
+   - files changed
+   - decisions
+   - tests/checks run
+   - next step
+5. Update `{{DOCS_PATH}}/LEARNED_PATTERNS.md`, `{{DOCS_PATH}}/OVERVIEW.md`, or `{{DOCS_PATH}}/ADR.md` only when the session changed durable knowledge.
+6. Give the user a concise summary with verification results.
+
+## Guardrails
+
+- Do not commit, push, merge, or open a PR unless the user explicitly asks.
+- Do not hide failing checks. State exact commands and failure status.

@@ -1,0 +1,36 @@
+---
+name: init-codexflow
+description: Populate CodexFlow skeleton docs from the current repository. Use after running `codexflow init`, or when docs still contain TODO placeholders.
+---
+
+# Initialize CodexFlow Docs
+
+Populate `{{DOCS_PATH}}` with repository-specific context.
+
+## Steps
+
+1. Read `AGENTS.md`, `{{DOCS_PATH}}/CONFIG.md`, `{{DOCS_PATH}}/ROADMAP.md`, `{{DOCS_PATH}}/OVERVIEW.md`, `{{DOCS_PATH}}/ADR.md`, and `{{DOCS_PATH}}/CUSTOM.md`.
+2. Inspect repository structure with fast read-only commands:
+   - `rg --files -g '!*node_modules*' -g '!*.lock' | head -200`
+   - read README, package manifests, build files, and existing docs.
+3. Identify:
+   - product purpose
+   - core user journeys
+   - architecture and source layout
+   - canonical test/build/lint/typecheck commands
+   - project-specific conventions and gotchas
+4. Update:
+   - `{{DOCS_PATH}}/OVERVIEW.md`
+   - `{{DOCS_PATH}}/CUSTOM.md`
+   - `{{DOCS_PATH}}/ROADMAP.md`
+   - `{{DOCS_PATH}}/ADR.md` if a durable architecture decision is discovered
+   - `AGENTS.md` only if command or workflow guidance needs correcting
+5. Do not invent facts. If commands or architecture are unclear, write a clear TODO and ask the user.
+
+## Output
+
+End with a concise summary:
+
+- what was detected
+- files updated
+- remaining TODOs or questions

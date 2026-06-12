@@ -1,0 +1,30 @@
+# Roadmap
+
+**Last Updated**: {{DATE}}
+
+## Now
+
+- [ ] Populate CodexFlow docs from the current repository [feature: codexflow-setup]
+
+## Next
+
+- [ ] Identify the first implementation task [feature: project-planning]
+- [ ] Add missing verification commands to `{{DOCS_PATH}}/CUSTOM.md` [feature: project-planning]
+
+## Later
+
+- Decide whether CodexFlow docs should be shared with the team
+- Consider adding project-specific Codex hooks after reviewing them with `/hooks`
+
+## Done
+
+- Initialized CodexFlow - {{DATE}} [feature: codexflow-setup]
+
+## Blockers
+
+- None
+
+## Notes
+
+- Every actionable task should include `[feature: name]`.
+- Keep "Now" focused to 1-3 active tasks.

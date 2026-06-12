@@ -1,0 +1,23 @@
+# Feature: example-feature
+
+This example shows the intended shape. Delete or replace it when you create a real feature with `$new-feature`.
+
+## Requirements
+
+- [ ] TODO
+
+## Acceptance Criteria
+
+- [ ] TODO
+
+## Out Of Scope
+
+- TODO
+
+## Implementation Notes
+
+- TODO
+
+## Verification
+
+- Test: `{{TEST_COMMAND}}`

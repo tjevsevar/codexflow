@@ -1,0 +1,27 @@
+# Session Log
+
+Prepend new entries. Keep entries concise and factual.
+
+## [codexflow-setup] {{DATE}}
+
+**Goal**: Initialize CodexFlow.
+
+**Completed**
+
+- Created Codex-native guidance, skills, and planning docs.
+
+**Files Changed**
+
+- `AGENTS.md`
+- `.agents/skills/`
+- `{{DOCS_PATH}}/`
+
+**Decisions**
+
+- Use Codex-native surfaces instead of Claude-oriented files.
+
+**Next**
+
+- Run `$init-codexflow` to populate project-specific docs.
+
+---

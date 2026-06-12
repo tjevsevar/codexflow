@@ -1,0 +1,55 @@
+#!/usr/bin/env node
+'use strict';
+
+const fs = require('fs');
+const path = require('path');
+
+const DOCS_PATH = '{{DOCS_PATH}}';
+
+function readStdinJson() {
+  try {
+    const input = fs.readFileSync(0, 'utf8');
+    return input.trim() ? JSON.parse(input) : {};
+  } catch {
+    return {};
+  }
+}
+
+function extractPath(data) {
+  const toolInput = data.tool_input || data.toolInput || {};
+  return toolInput.file_path || toolInput.path || toolInput.file || '';
+}
+
+function isSkeleton(filePath) {
+  try {
+    const content = fs.readFileSync(filePath, 'utf8');
+    return content.includes('TODO') || content.includes('Run `$init-codexflow`');
+  } catch {
+    return true;
+  }
+}
+
+function main() {
+  const data = readStdinJson();
+  const candidate = extractPath(data);
+  if (!candidate) process.exit(0);
+
+  const resolved = path.resolve(candidate);
+  const docsSegment = path.sep + DOCS_PATH + path.sep;
+
+  const isVision = resolved.includes(docsSegment) && resolved.endsWith(path.sep + 'OVERVIEW.md');
+  const isFeatureSpec = new RegExp(
+    DOCS_PATH.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') +
+      '[/\\\\]feature_docs[/\\\\][^/\\\\]+[/\\\\]SPEC\\.md$'
+  ).test(resolved);
+
+  if ((isVision || isFeatureSpec) && !isSkeleton(resolved)) {
+    process.stderr.write(
+      'CodexFlow blocked this edit because it changes durable requirements or architecture docs. ' +
+      'Ask the user for explicit approval, then retry if approved.\n'
+    );
+    process.exit(2);
+  }
+}
+
+main();

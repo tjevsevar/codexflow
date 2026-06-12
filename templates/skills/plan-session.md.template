@@ -1,0 +1,33 @@
+---
+name: plan-session
+description: Plan the next Codex implementation session from CodexFlow docs. Use before coding when the user asks what to work on next or wants a scoped implementation plan.
+---
+
+# Plan Session
+
+Create a focused plan for one task.
+
+## Steps
+
+1. Read:
+   - `{{DOCS_PATH}}/ROADMAP.md`
+   - the last 2-3 entries in `{{DOCS_PATH}}/SESSION_LOG.md`
+   - `{{DOCS_PATH}}/CUSTOM.md`
+   - relevant feature spec under `{{DOCS_PATH}}/feature_docs/` if a feature is named or branch-derived
+2. Detect current branch:
+   - `git branch --show-current`
+   - infer feature from names like `codex/user-auth`, `feat/user-auth`, or `feature/user-auth`
+3. Pick one unchecked task:
+   - prefer the first unchecked task in `Now`
+   - if a feature is detected, prefer tasks tagged `[feature: detected-name]`
+4. Inspect only the code needed to make the plan concrete.
+5. Present a plan with:
+   - task
+   - files likely to change
+   - implementation steps
+   - tests/checks to run
+   - open questions
+
+## Guardrail
+
+Stop after the plan unless the user explicitly asked you to implement immediately.

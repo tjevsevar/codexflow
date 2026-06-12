@@ -1,0 +1,29 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|apply_patch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/.codex/hooks/protect-docs.js\"",
+            "timeout": 10,
+            "statusMessage": "Checking CodexFlow protected docs"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$(git rev-parse --show-toplevel)/.codex/hooks/session-snapshot.js\"",
+            "timeout": 10,
+            "statusMessage": "Saving CodexFlow session snapshot"
+          }
+        ]
+      }
+    ]
+  }
+}

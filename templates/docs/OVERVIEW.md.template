@@ -1,0 +1,31 @@
+# System Overview
+
+This file should describe what the system is today. Run `$init-codexflow` to replace placeholders with repository-specific content.
+
+## Product Purpose
+
+TODO: Describe what this project does in 2-3 sentences.
+
+## Core User Journeys
+
+- **UJ1**: TODO
+- **UJ2**: TODO
+
+## Architecture
+
+- **Stack**: {{TECH_STACK}}
+- **Source layout**: TODO
+- **Primary modules**: TODO
+- **Data/storage**: TODO
+- **External integrations**: TODO
+
+## Development Workflow
+
+- Test: `{{TEST_COMMAND}}`
+- Build: `{{BUILD_COMMAND}}`
+- Lint: `{{LINT_COMMAND}}`
+- Typecheck: `{{TYPECHECK_COMMAND}}`
+
+## Invariants
+
+- TODO: Add rules that should remain true across future changes.

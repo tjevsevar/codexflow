@@ -1,0 +1,25 @@
+# Project-Specific Context
+
+Use this file for context that does not fit the standard CodexFlow docs.
+
+## External References
+
+- None yet
+
+## Custom Commands
+
+```bash
+# Add project-specific commands here.
+```
+
+## Conventions
+
+- TODO
+
+## Known Gotchas
+
+- TODO
+
+## Do Not Do
+
+- Do not read, print, or commit secrets.

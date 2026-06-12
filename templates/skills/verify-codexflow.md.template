@@ -1,0 +1,52 @@
+---
+name: verify-codexflow
+description: Verify CodexFlow setup and documentation consistency. Use for a read-only health check of AGENTS.md, .agents/skills, docs, and optional Codex hooks.
+---
+
+# Verify CodexFlow
+
+Run a read-only health check.
+
+## Check Required Files
+
+- `AGENTS.md`
+- `.agents/skills/init-codexflow/SKILL.md`
+- `.agents/skills/plan-session/SKILL.md`
+- `.agents/skills/start-session/SKILL.md`
+- `.agents/skills/end-session/SKILL.md`
+- `.agents/skills/new-feature/SKILL.md`
+- `.agents/skills/verify-codexflow/SKILL.md`
+- `{{DOCS_PATH}}/.codexflow.json`
+- `{{DOCS_PATH}}/CONFIG.md`
+- `{{DOCS_PATH}}/ROADMAP.md`
+- `{{DOCS_PATH}}/SESSION_LOG.md`
+- `{{DOCS_PATH}}/OVERVIEW.md`
+- `{{DOCS_PATH}}/ADR.md`
+- `{{DOCS_PATH}}/CUSTOM.md`
+- `{{DOCS_PATH}}/LEARNED_PATTERNS.md`
+
+## Check Consistency
+
+- Every roadmap task should have `[feature: name]`.
+- Session log entries should include a feature and date.
+- `AGENTS.md` should mention the docs path and commands.
+- Feature specs in `feature_docs/` should have matching roadmap feature tags when implementation has started.
+
+## Optional Hooks
+
+If `.codex/hooks.json` exists:
+
+- Read it and confirm commands point to `.codex/hooks/`.
+- Check hook scripts with `node --check`.
+- Remind the user to review hooks with `/hooks` before trusting them.
+
+## Output
+
+Report:
+
+- OK items
+- warnings
+- missing files
+- suggested fixes
+
+Do not modify files.

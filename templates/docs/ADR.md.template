@@ -1,0 +1,29 @@
+# Architecture Decision Record
+
+Append new entries. Do not rewrite accepted historical decisions except to mark them superseded.
+
+## ADR-0001: Adopt CodexFlow Project Workflow
+
+- **Date**: {{DATE}}
+- **Status**: Accepted
+
+### Context
+
+The project needs persistent context for Codex sessions: priorities, recent work, architecture decisions, learned patterns, and feature-specific specs.
+
+### Decision
+
+Use CodexFlow with Codex-native surfaces:
+
+- `AGENTS.md` for persistent repository guidance
+- `.agents/skills` for reusable workflows
+- `{{DOCS_PATH}}/` for planning and project memory
+- Optional `.codex/hooks.json` only after explicit hook review
+
+### Consequences
+
+- Codex gets consistent context across sessions.
+- Planning docs may need upkeep as implementation changes.
+- Generated hooks must be reviewed and trusted before use.
+
+---

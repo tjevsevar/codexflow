@@ -1,0 +1,69 @@
+---
+name: new-feature
+description: Create a new CodexFlow feature spec and roadmap tasks. Use when the user asks to add, define, or plan a new feature.
+---
+
+# New Feature
+
+Create a feature spec and feature-tagged tasks.
+
+## Inputs To Gather
+
+- feature name in kebab-case
+- short description
+- requirements
+- acceptance criteria
+- out-of-scope items
+- dependencies or ticket references
+
+If the user already provided enough detail, do not re-ask.
+
+## Files To Update
+
+Create:
+
+- `{{DOCS_PATH}}/feature_docs/<feature-name>/SPEC.md`
+
+Append tasks to:
+
+- `{{DOCS_PATH}}/ROADMAP.md`
+
+## Feature Spec Shape
+
+```markdown
+# Feature: <feature-name>
+
+## Requirements
+
+- [ ] ...
+
+## Acceptance Criteria
+
+- [ ] ...
+
+## Out Of Scope
+
+- ...
+
+## Dependencies
+
+- ...
+
+## Implementation Notes
+
+- ...
+
+## Verification
+
+- ...
+```
+
+## Roadmap Task Shape
+
+```markdown
+- [ ] <task> [feature: <feature-name>]
+```
+
+## Guardrail
+
+After creating the spec and tasks, summarize what changed and ask before starting implementation.
